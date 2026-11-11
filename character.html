@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>角色生成 · RuiC-PoseAtlas</title>
+  <link rel="stylesheet" href="assets/css/character.css">
+  <script type="module" src="assets/js/character.js"></script>
+</head>
+<body>
+  <header><a href="index.html">RuiC-PoseAtlas</a><span>角色工作室</span></header>
+  <main>
+    <h1>角色图生成</h1>
+    <p class="intro">描述你想创作的角色，用参考图指定姿势、穿搭、长相、身材和背景。</p>
+    <div class="studio">
+      <form id="generator">
+        <div class="prompt-heading">
+          <label for="prompt">提示词</label>
+          <button type="button" id="complete-prompt">生成提示词</button>
+        </div>
+        <textarea id="prompt" name="prompt" maxlength="4000" rows="5" placeholder="例如：雨后的城市街道，一位穿深色风衣的旅行者，柔和的电影光线。"></textarea>
+        <h2>参考图 <small>可选 · 每类一张</small></h2>
+        <div id="references"></div>
+        <button class="primary" id="generate" type="submit">生成角色图</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+      <section class="preview" aria-labelledby="preview-title">
+        <h2 id="preview-title">生成预览</h2>
+        <div id="result-frame"><p id="placeholder">生成的角色图会显示在这里</p><img id="result" alt="生成的角色图" hidden></div>
+      </section>
+    </div>
+  </main>
+  <dialog id="picker" aria-labelledby="picker-title">
+    <form method="dialog" class="picker-heading"><h2 id="picker-title"></h2><button>关闭</button></form>
+    <label for="search">搜索素材</label>
+    <input id="search" type="search" placeholder="按名称、编号或标签筛选">
+    <div id="picker-scroll">
+      <div id="tiles"></div>
+      <div id="picker-end" aria-hidden="true"></div>
+    </div>
+    <p id="picker-status" role="status"></p>
+  </dialog>
+</body>
+</html>

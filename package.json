@@ -11,7 +11,8 @@
     "data:face": "node scripts/import-faces.mjs",
     "verify": "node scripts/verify.mjs",
     "fetch-images": "node scripts/fetch-images.mjs",
-    "fetch-faces": "node scripts/fetch-faces.mjs"
+    "fetch-faces": "node scripts/fetch-faces.mjs",
+    "character": "node scripts/character-server.mjs"
   },
   "engines": {
     "node": ">=18"
